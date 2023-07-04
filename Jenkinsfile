@@ -14,16 +14,21 @@ pipeline {
 
         stage("Unit Testing") {
             steps {
-                mvnTest()
+                script {
+                    mvnTest()
+                }
             }
         }
         
         stage("Integration Testing") {
             steps {
-                mvnIntegrationTest()
+                    script {
+                        mvnIntegrationTest()
+                    }
+                }
             }
         }
-        
+
 
     }
 }
