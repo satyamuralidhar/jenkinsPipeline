@@ -22,9 +22,8 @@ pipeline {
         
         stage("Integration Testing") {
             steps {
-                    script {
-                        mvnIntegrationTest()
-                    }
+                script {
+                    mvnIntegrationTest()
                 }
             }
         }
