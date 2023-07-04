@@ -11,6 +11,13 @@ pipeline {
 
             )}
         }
+        stage("MVN Clean") {
+            steps {
+                script {
+                    mvnClean()
+                }
+            }
+        }
 
         stage("Unit Testing") {
             steps {
