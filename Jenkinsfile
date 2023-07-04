@@ -4,15 +4,17 @@ pipeline {
     agent any
     stages {
         stage("Git Checkout") {
-
-        steps {
+            steps {
             gitCheckout(
                 branch: "main",
                 url: "https://github.com/satyamuralidhar/jenkinsPipeline.git"
 
-            )
+            )}
         }
-
+        stage("Unit Testing") {
+            steps {
+                mvnTest()
+            }
         }
     }
 }
