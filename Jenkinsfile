@@ -11,10 +11,18 @@ pipeline {
 
             )}
         }
+
         stage("Unit Testing") {
             steps {
                 mvnTest()
             }
         }
+        
+        stage("Integration Testing") {
+            steps {
+                mvnIntegrationTest()
+            }
+        }
+
     }
 }
